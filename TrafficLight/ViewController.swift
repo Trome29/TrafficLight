@@ -7,22 +7,24 @@
 
 import UIKit
 
+// MARK: ViewController
 class ViewController: UIViewController {
     
-// MARK: Outlets
+    // MARK: Outlets
     @IBOutlet weak var redView: UIView!
     @IBOutlet weak var yellowView: UIView!
     @IBOutlet weak var greenView: UIView!
     @IBOutlet weak var actionButton: UIButton!
-    
+
+    // MARK: Storage property
     var colorCounter = 0
     
-// MARK: Computed property
+    // MARK: Computed property
     var colorsView: [UIView] {
         [redView, yellowView, greenView]
     }
     
-// MARK: ViewDidLoad
+    // MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -30,7 +32,8 @@ class ViewController: UIViewController {
         makeRounded(views: colorsView)
         makeCornerRadius(to: actionButton, with: 20)
     }
-
+    
+    // MARK: Press Button
     @IBAction func turnTrafficLight() {
         
         colorCounter = colorCounter >= 3 ? 0 : colorCounter
@@ -38,14 +41,13 @@ class ViewController: UIViewController {
         for (index, view) in colorsView.enumerated() {
             if index == colorCounter {
                 view.alpha = 1.0
-                actionButton.setTitle("Next", for: .normal)
+                actionButton.setTitle("NEXT", for: .normal)
             } else {
                 view.alpha = 0.3
             }
         }
         colorCounter += 1
     }
-    
 }
 
 // MARK: Extension
