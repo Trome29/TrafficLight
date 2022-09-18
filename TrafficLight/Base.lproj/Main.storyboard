@@ -56,6 +56,9 @@
                                         <state key="normal" title="START">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="turnTrafficLight" destination="BYZ-38-t0r" eventType="touchUpInside" id="jeh-TA-yTR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
